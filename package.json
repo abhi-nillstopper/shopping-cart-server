@@ -1,0 +1,32 @@
+{
+  "name": "shopping-cart-server",
+  "version": "1.0.0",
+  "description": "shopping-cart-server",
+  "main": "src/index.js",
+  "scripts": {
+    "start-dev": "nodemon",
+    "node-start": "npm run run-local",
+    "run-local": "babel-node src/index.js",
+    "compile-run": "babel src --out-dir build --source-maps && node ./build/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/preset-env": "^7.14.7",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.29.0",
+    "kill-port": "^1.6.1",
+    "nodemon": "^2.0.9"
+  }
+}
