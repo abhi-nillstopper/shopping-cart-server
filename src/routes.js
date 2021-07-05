@@ -1,9 +1,9 @@
 import express from "express";
 import { verifyToken } from "./middleware/verifyToken";
-import UserController from "./controllers/user_controller"
-import BannerController from "./controllers/banner_controller"
-import CategoryController from "./controllers/category_controller"
-import ProductController from "./controllers/product_controller"
+import UserController from "./controllers/user_controller";
+import BannerController from "./controllers/banner_controller";
+import CategoryController from "./controllers/category_controller";
+import ProductController from "./controllers/product_controller";
 
 const routes = express.Router();
 
@@ -12,15 +12,15 @@ routes.get("/status", (req, res) => {
 });
 
 //user
-routes.post("/user",UserController.CreateUser)
+routes.post("/user", UserController.CreateUser);
 
 //banners
-routes.get("/banners", BannerController.getAllBanner)
+routes.get("/banners", verifyToken, BannerController.getAllBanner);
 
 //Category
-routes.get("/categories", CategoryController.getAllCategories)
+routes.get("/categories", verifyToken, CategoryController.getAllCategories);
 
 //Product
-routes.get("/products", ProductController.getAllProducts)
+routes.get("/products", verifyToken, ProductController.getAllProducts);
 
 export default routes;
