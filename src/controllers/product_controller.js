@@ -1,10 +1,14 @@
 import Products from "../models/products";
+import { Categories } from "../constant/categories";
 
 const ProductController = {
   async getAllProducts(req, res) {
     try {
       const { authData } = res.locals;
-      const products = await Products.find({});
+      const { category } = req.query;
+      const query = !category ? {} : { category: Categories[category] };
+      const products = await Products.find(query);
+
       if (products.length > 0) {
         return res.status(200).json({ authData, products });
       }

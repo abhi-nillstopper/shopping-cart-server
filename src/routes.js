@@ -12,7 +12,8 @@ routes.get("/status", (req, res) => {
 });
 
 //user
-routes.post("/user", UserController.CreateUser);
+routes.post("/user/authenticate", UserController.authenticateUser);
+routes.post("/user/register", UserController.CreateUser);
 
 //banners
 routes.get("/banners", verifyToken, BannerController.getAllBanner);
