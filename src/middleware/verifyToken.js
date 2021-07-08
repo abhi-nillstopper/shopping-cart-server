@@ -12,7 +12,7 @@ export function verifyToken(req, res, next) {
 }
 
 function verifyAndCallController(req, res, callback) {
-  jwt.verify(req.token, process.env.SESSION_SECRET, (err, authData) => {
+  jwt.verify(req.token, process.env.TOKEN_SECRET, (err, authData) => {
     if (err) {
       console.log("JWT error", err);
       return res.sendStatus(401);
