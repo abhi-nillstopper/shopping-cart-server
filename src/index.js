@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 // import path from "path";
-import routes from "./routes";
+import app_routes from "./app_routes";
 const PORT = process.env.PORT || 8000;
 const app = express();
 // const httpServer = createServer(app);
@@ -35,7 +35,7 @@ try {
 app.use(cors({ origin: process.env.SPORT_FRONTEND_URL }));
 app.use(express.json());
 // app.use("/files", express.static(path.resolve(__dirname, "..", "files")));
-app.use(routes);
+app.use(app_routes);
 
 app.listen(PORT, function () {
   console.log(`started listing on ${PORT}`);
