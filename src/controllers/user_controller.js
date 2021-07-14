@@ -30,7 +30,7 @@ const UserController = {
       }
 
       return res
-        .status(400)
+        .status(200)
         .json({ message: "Email already exist!! please login" });
     } catch (error) {
       console.log(error);
