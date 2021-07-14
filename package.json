@@ -16,7 +16,7 @@
     "compile-run": "babel src --out-dir build --source-maps && node ./build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Abhi",
   "license": "ISC",
   "dependencies": {
     "@babel/cli": "^7.14.5",
